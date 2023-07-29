@@ -22,7 +22,7 @@ HomePage.getLayout = (page) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/featuredProduct`);
+  const res = await fetch(`${process.env.API_URL}/products`);
   const data = await res.json();
 
   return {

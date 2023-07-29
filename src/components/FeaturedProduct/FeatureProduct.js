@@ -8,7 +8,7 @@ const FeatureProduct = ({ featuredProduct }) => {
         <p className="text-lg font-normal">Check & Get Your Desired Product!</p>
       </div>
       <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-        {featuredProduct?.products?.map(
+        {featuredProduct?.map(
           (product) => product.featured && <ProductCard key={product.id} product={product} />
         )}
       </div>
