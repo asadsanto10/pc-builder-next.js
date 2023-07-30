@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ProductCard = ({ product }) => {
   return (
-    <Link href="#">
+    <Link href={`/details/${product.id}`}>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="flex justify-center">
           <Image
