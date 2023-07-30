@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ProductCard = ({ product }) => {
+  const router = useRouter();
+  // const handeClickItem = () => {
+  //   console.log({ product });
+  // };
   return (
     <Link href={`/details/${product.id}`}>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -43,6 +48,17 @@ const ProductCard = ({ product }) => {
               {product?.status ? 'In Stock' : 'Out of stock'}
             </span>
           </div>
+          {router.pathname.split('/')[2] === 'choose' && (
+            <div className="text-center">
+              <button
+                // onClick={handeClickItem}
+                type="button"
+                className="text-white bg-indigo-500 border-0 py-2 px-2 text-base mt-5 focus:outline-none hover:bg-indigo-600 rounded"
+              >
+                Add To Builder
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </Link>
