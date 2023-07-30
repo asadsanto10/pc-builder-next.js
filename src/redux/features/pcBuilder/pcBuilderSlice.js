@@ -5,11 +5,16 @@ const initialState = {
 };
 
 const pcBuilderSlice = createSlice({
-  name: 'pricing',
+  name: 'pcBuidler',
   initialState,
   reducers: {
     addBuildItem: (state, action) => {
-      state.buildItem = action.payload;
+      const itemExists = state.buildItem.some(
+        (item) => item.id === action.payload.id || item.category === action.payload.category
+      );
+      if (!itemExists) {
+        state.buildItem.push(action.payload);
+      }
     },
   },
 });

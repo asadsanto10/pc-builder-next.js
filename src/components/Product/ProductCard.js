@@ -1,15 +1,20 @@
+import { addBuildItem } from '@/redux/features/pcBuilder/pcBuilderSlice';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
 
 const ProductCard = ({ product }) => {
   const router = useRouter();
-  // const handeClickItem = () => {
-  //   console.log({ product });
-  // };
+  const dispatch = useDispatch();
+
+  const handeClickItem = () => {
+    dispatch(addBuildItem(product));
+    router.push('/pc_builder');
+  };
   return (
-    <Link href={`/details/${product.id}`}>
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <Link href={`/details/${product.id}`}>
         <div className="flex justify-center">
           <Image
             priority
@@ -20,7 +25,6 @@ const ProductCard = ({ product }) => {
             alt="product image"
           />
         </div>
-
         <div className="px-5 pb-5">
           <span className="bg-blue-100 capitalize text-blue-800 text-xs font-medium mb-10 p-1.5 rounded">
             {product?.category}
@@ -48,20 +52,20 @@ const ProductCard = ({ product }) => {
               {product?.status ? 'In Stock' : 'Out of stock'}
             </span>
           </div>
-          {router.pathname.split('/')[2] === 'choose' && (
-            <div className="text-center">
-              <button
-                // onClick={handeClickItem}
-                type="button"
-                className="text-white bg-indigo-500 border-0 py-2 px-2 text-base mt-5 focus:outline-none hover:bg-indigo-600 rounded"
-              >
-                Add To Builder
-              </button>
-            </div>
-          )}
+        </div>{' '}
+      </Link>
+      {router.pathname.split('/')[2] === 'choose' && (
+        <div className="text-center">
+          <button
+            onClick={handeClickItem}
+            type="button"
+            className="text-white bg-indigo-500 border-0 py-2 px-2 text-base mb-5 focus:outline-none hover:bg-indigo-600 rounded"
+          >
+            Add To Builder
+          </button>
         </div>
-      </div>
-    </Link>
+      )}
+    </div>
   );
 };
 

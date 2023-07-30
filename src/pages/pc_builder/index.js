@@ -1,9 +1,14 @@
 /* eslint-disable react/no-array-index-key */
 import RootLayout from '@/Layouts/RootLayout';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const PCBuilder = () => {
   const category = ['processor', 'motherboard', 'RAM', 'power supply', 'monitor'];
+
+  const { buildItem } = useSelector((state) => state?.pcBuilder);
+  console.log({ buildItem });
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
