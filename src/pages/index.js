@@ -1,16 +1,18 @@
-import RootLayout from '@/Layouts/RootLayout';
-import FeatureProduct from '@/components/FeaturedProduct/FeatureProduct';
-import 'flowbite';
 import Head from 'next/head';
 
-const HomePage = ({ featuredProduct }) => {
+import RootLayout from '@/Layouts/RootLayout';
+import Product from '@/components/Product/Product';
+import 'flowbite';
+
+const HomePage = ({ products }) => {
+  const featuredProduct = products?.filter((product) => product.featured && product);
+
   return (
     <>
       <Head>
         <title>PC-Builder</title>
       </Head>
-
-      <FeatureProduct featuredProduct={featuredProduct} />
+      <Product products={featuredProduct} />
     </>
   );
 };
@@ -27,7 +29,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      featuredProduct: data,
+      products: data,
     },
+    revalidate: 30,
   };
 };

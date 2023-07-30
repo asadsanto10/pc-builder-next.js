@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <nav className="bg-indigo-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="./" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="https://cdn3d.iconscout.com/3d/premium/thumb/computer-3711649-3105370.png"
             width={50}
