@@ -1,8 +1,7 @@
-import Head from 'next/head';
-
 import RootLayout from '@/Layouts/RootLayout';
 import Product from '@/components/Product/Product';
 import 'flowbite';
+import Head from 'next/head';
 
 const HomePage = ({ products }) => {
   const featuredProduct = products?.filter((product) => product.featured && product);

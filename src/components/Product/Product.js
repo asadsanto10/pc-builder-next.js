@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-
 import FeauredCategory from '../FeauredCategory/FeauredCategory';
 import ProductCard from './ProductCard';
 

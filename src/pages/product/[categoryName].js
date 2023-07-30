@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import RootLayout from '@/Layouts/RootLayout';
 import Product from '@/components/Product/Product';
+import RootLayout from '@/Layouts/RootLayout';
 
 const CategoryProduct = ({ products }) => {
   return (

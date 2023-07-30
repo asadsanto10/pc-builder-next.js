@@ -1,3 +1,116 @@
+// {
+//   "extends": [
+//     "plugin:@next/next/recommended",
+//     // "next/core-web-vitals",
+//     "airbnb",
+//     "airbnb/hooks",
+//     "eslint:recommended",
+//     "prettier",
+//     "plugin:jsx-a11y/recommended"
+//   ],
+//   "plugins": ["prettier", "react", "react-hooks"],
+//   "settings": {
+//     "import/resolver": {
+//       "alias": {
+//         "map": [["@", "./src"]]
+//       }
+//     }
+//   },
+//   "env": {
+//     "browser": true,
+//     "node": true,
+//     "es2021": true,
+//     "jest": true
+//   },
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true
+//     },
+//     "sourceType": "module",
+//     "ecmaVersion": 2021
+//   },
+
+//   "rules": {
+//     "react/jsx-curly-brace-presence": 0,
+//     "import/no-extraneous-dependencies": 0,
+//     "react/function-component-definition": 0,
+//     "default-param-last": 0,
+//     "react/jsx-props-no-spreading": 0,
+//     "import/prefer-default-export": 0,
+//     "react/react-in-jsx-scope": 0,
+//     "react-hooks/rules-of-hooks": "error",
+//     "no-console": 0,
+//     "react/state-in-constructor": 0,
+//     "indent": 0,
+//     "linebreak-style": 0,
+//     "react/prop-types": 0,
+//     "jsx-a11y/click-events-have-key-events": 0,
+//     "arrow-body-style": 0,
+//     "jsx-a11y/no-onchange": 0,
+//     "react/prefer-stateless-function": 0,
+//     "no-unused-vars": "warn",
+//     "no-empty-pattern": "warn",
+//     "jsx-a11y/anchor-is-valid": 0,
+//     "no-param-reassign": 0,
+//     "class-methods-use-this": 0,
+//     "react/jsx-filename-extension": [
+//       1,
+//       {
+//         "extensions": [".js", ".jsx", "ts", "tsx"]
+//       }
+//     ],
+//     "prettier/prettier": [
+//       "error",
+//       {
+//         "trailingComma": "es5",
+//         "singleQuote": true,
+//         "printWidth": 100,
+//         "tabWidth": 2,
+//         "semi": true,
+//         "endOfLine": "auto"
+//       }
+//     ]
+//     // "import/order": [
+//     //   "error",
+//     //   // {
+//     //   //   "groups": [
+//     //   //     "index",
+//     //   //     "sibling",
+//     //   //     "parent",
+//     //   //     "internal",
+//     //   //     "external",
+//     //   //     "builtin",
+//     //   //     "object",
+//     //   //     "type"
+//     //   //   ]
+//     //   // }
+//     //   {
+//     //     "groups": ["builtin", "index", "object", "internal", "external", ["sibling", "parent"]]
+//     //     // "newlines-between": "always"
+//     //   }
+//     // ]
+//     // "import/order": [
+//     //   "error",
+//     //   {
+//     //     "groups": ["builtin", "external", "internal"],
+//     //     "pathGroups": [
+//     //       {
+//     //         "pattern": "react",
+//     //         "group": "external",
+//     //         "position": "before"
+//     //       }
+//     //     ],
+//     //     "pathGroupsExcludedImportTypes": ["react"],
+//     //     "newlines-between": "always",
+//     //     "alphabetize": {
+//     //       "order": "asc",
+//     //       "caseInsensitive": true
+//     //     }
+//     //   }
+//     // ]
+//   }
+// }
+
 {
   "extends": [
     "plugin:@next/next/recommended",
@@ -6,7 +119,8 @@
     "airbnb/hooks",
     "eslint:recommended",
     "prettier",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended"
   ],
   "plugins": ["prettier", "react", "react-hooks"],
   "settings": {
@@ -68,28 +182,6 @@
         "tabWidth": 2,
         "semi": true,
         "endOfLine": "auto"
-      }
-    ],
-    "import/order": [
-      "error",
-      // {
-      //   "groups": [
-      //     "index",
-      //     "sibling",
-      //     "parent",
-      //     "internal",
-      //     "external",
-      //     "builtin",
-      //     "object",
-      //     "type"
-      //   ]
-      // }
-      {
-        "groups": [
-          ["builtin", "external"],
-          ["internal", "parent", "sibling", "index"]
-        ],
-        "newlines-between": "always"
       }
     ]
   }

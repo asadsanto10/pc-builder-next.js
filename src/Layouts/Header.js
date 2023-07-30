@@ -93,7 +93,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/pc_builder"
                 className="block py-2 pl-3 pr-4 bg-indigo-500 text-gray-50 rounded hover:bg-indigo-300 md:border-0 md:hover:text-blue-700 md:p-2"
               >
                 PC Builder
