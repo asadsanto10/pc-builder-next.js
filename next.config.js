@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn3d.iconscout.com', 'www.startech.com.bd'],
+    domains: ['cdn3d.iconscout.com', 'www.startech.com.bd', 'dummyimage.com'],
   },
 };
 
